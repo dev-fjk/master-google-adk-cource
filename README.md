@@ -11,7 +11,7 @@ https://github.com/theailanguage/adk_samples
 CLI 用の runner を使って処理を行います。
 
 ```
-python main.py
+python agent_runner.py
 ```
 
 ## Web UI で動作確認する(google ADK に agent を認識させる方法)
