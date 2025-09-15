@@ -19,4 +19,4 @@ HTML、CSS、JavaScriptを含む完全なHTMLファイルを生成すること�
 
 また、生成したHTMLは必ずoutputディレクトリに出力して下さい。
 
-tools.file_writer.pyを利用することで出力することができます。
+file_writer.pyを利用することで出力することができます。

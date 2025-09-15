@@ -1,7 +1,9 @@
 {
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
   "python.analysis.extraPaths": ["./"],
   "python.autoComplete.extraPaths": ["./"],
   "python.terminal.activateEnvironment": true,
+  "ruff.path": ["${workspaceFolder}/.venv/Scripts/ruff.exe"],
   "ruff.enable": true,
   "ruff.lint.ignore": ["B008"],
   "ruff.organizeImports": true,
