@@ -1,0 +1,27 @@
+[project]
+name = "version-1-wesbite-builder-simple"
+version = "0.1.0"
+description = "version-1-wesbite-builder-simple"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-adk>=1.2.1",
+    "google-genai>=1.19.0",
+    "rich>=14.0.0",
+    "ruff==0.12.7",
+    "pydantic-settings>=2.10.1",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+fix = true
+
+ignore = ["B008"]
+
+[tool.ruff.format]
+preview = true
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+ignore = []
