@@ -2,6 +2,16 @@
 
 pyproject.toml と同じ階層で以下
 
+## CLI で動作確認する方法
+
+main.py で設定している runner を使って処理を行います。
+
+```
+python main.py
+```
+
+## Web UI で動作確認する(google ADK に agent を認識させる方法)
+
 ```
 adk web ./agents
 ```
