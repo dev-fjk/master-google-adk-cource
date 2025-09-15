@@ -6,6 +6,14 @@ pyproject.toml と同じ階層で以下
 adk web ./agents
 ```
 
+ADK のウェブページは以下
+
+http://127.0.0.1:8000/dev-ui/
+
+### 生成されるページ例
+
+![alt text](./images/generate_page.png)
+
 ### 実行時のログイメージ
 
 ```
