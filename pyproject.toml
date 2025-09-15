@@ -1,7 +1,7 @@
 [project]
-name = "version-1-wesbite-builder-simple"
+name = "website_builder_app"
 version = "0.1.0"
-description = "version-1-wesbite-builder-simple"
+description = "web site builder AI Agent App using Google ADK"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
