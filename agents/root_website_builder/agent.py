@@ -5,13 +5,17 @@ sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 from google.adk.agents import LlmAgent
 
-from tools.file_writer import write_to_file
+from agents.code_writer.agent import code_writer_agent
+from agents.designer.agent import designer_agent
+from agents.requirements_writer.agent import requirements_writer_agent
 from utils.file_loader import load_instructions_file
 
 root_agent = LlmAgent(
-  name = "website_builder_agent",
-  model="gemini-2.0-flash-001",
-  instruction=load_instructions_file("agents/website_builder/instructions.txt"),
-  description=load_instructions_file("agents/website_builder/description.txt"),
-  tools=[write_to_file],
+  name = "root_website_builder_agent",
+  description=load_instructions_file("agents/root_website_builder/description.txt"),
+  sub_agents=[
+    requirements_writer_agent,
+    designer_agent,
+    code_writer_agent
+  ],
 )

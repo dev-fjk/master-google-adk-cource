@@ -1,2 +1,1 @@
-このエージェントは、ウェブサイトへのユーザークエリを受け取り、CSSとJavaScriptが埋め込まれた単一の自己完結型HTMLファイルを生成します。
-その後、ファイルライターツールを使用して、現在のタイムスタンプに基づいてファイル名を付与し、ファイルを保存します。
+This is a sequential agent that executes the sub agents in the provided order
