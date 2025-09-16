@@ -1,1 +1,2 @@
-This agent takes the research outputs from all five question researcher agents and merges them into a single comprehensive query for the requirements writer agent.
+このエージェントは、5 つの質問リサーチャーエージェントすべてからのリサーチ出力を取得し、
+要件ライターエージェントに対する単一の包括的なクエリに統合します。

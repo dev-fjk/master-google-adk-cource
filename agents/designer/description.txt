@@ -1,1 +1,4 @@
-The Designer Agent acts as an automated UI/UX designer. It translates functional requirements into a detailed visual blueprint, defining the design system (colors, typography, spacing), layout, and component styling in a structured Markdown format for a subsequent coding agent.
+Designer Agentは、自動化されたUI/UXデザイナーとして機能します。
+機能要件を詳細なビジュアルブループリントに変換し、
+デザインシステム（色、タイポグラフィ、間隔）、レイアウト、コンポーネントのスタイルを、
+後続のコーディングエージェント向けに構造化されたMarkdown形式で定義します。
