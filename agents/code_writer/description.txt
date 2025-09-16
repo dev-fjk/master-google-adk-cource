@@ -1,1 +1,1 @@
-コード ライター エージェントは、自動化されたフロントエンド開発者として機能し、設計仕様と機能要件を、CSS と JavaScript が埋め込まれた単一のクリーンで完全に機能する HTML ファイルに細心の注意を払って変換し、すぐに展開できるようにします。
+The Code Writer Agent acts as an automated front-end developer, meticulously translating design specifications and functional requirements into a single, clean, and fully functional HTML file with embedded CSS and JavaScript, ready for deployment.
