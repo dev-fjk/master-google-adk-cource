@@ -65,9 +65,7 @@ $ uv sync
 
 ### .env
 
-各種 pyproject.toml と同じ階層に配置してください。
-
-必要な環境変数一覧は [env_parameters.md](./env_parameters.md) を参照
+.env_example をコピーして.env を作成してください
 
 ### GOOGLE_API_KEY の取得方法(.env GOOGLE_API_KEY に設定)
 
