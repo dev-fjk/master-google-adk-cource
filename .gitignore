@@ -3,6 +3,7 @@ output/*
 !output/250915_185835_generated_page.html
 !output/250915_190606_generated_page.html
 !output/250915_204229_generated_page.html
+!output/250916_215002_generated_page.html
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

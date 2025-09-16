@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft: 世界を創造し探検する究極のサンドボックスゲーム</title>
+    <meta name="description" content="Minecraftの魅力を紹介するページ。ブロックの世界で探検、建築、サバイバルを楽しもう。無限の可能性があなたを待っています。">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #FF9800;
+            --background-color: #F0F4F8;
+            --text-neutral-color: #212121;
+            --sub-gray-color: #B0BEC5;
+            --hero-text-color: #FFFFFF;
+            --light-primary-color: #E8F5E9; /* For CTA section background */
+            --primary-darker: #388E3C; /* For primary button hover */
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-neutral-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--hero-text-color); /* Default for hero, overridden elsewhere */
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-neutral-color);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.4;
+            color: var(--text-neutral-color);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--text-neutral-color); /* Default, can be primary-color */
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-neutral-color);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        small {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none; /* Remove default underline for all links initially */
+            color: inherit;
+        }
+
+        a, button {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px; /* Added horizontal padding for responsiveness */
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 14px 28px;
+            border-radius: 8px;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: translateY(0); /* For hover effect */
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-darker);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            padding: 14px 28px;
+            border-radius: 8px;
+            border: 2px solid var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border-color: transparent;
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+        }
+
+        .form-input {
+            background-color: #FFFFFF;
+            padding: 12px 16px;
+            border: 1px solid var(--sub-gray-color);
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: var(--text-neutral-color);
+        }
+
+        .form-input:focus {
+            border: 2px solid var(--primary-color);
+            outline: none;
+        }
+
+        .header {
+            background-color: #FFFFFF;
+            padding: 16px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo img {
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        .header .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .nav-links a:not(.btn-primary) {
+            color: var(--text-neutral-color);
+            margin-left: 32px;
+            font-size: 16px;
+        }
+
+        .header .nav-links a:not(.btn-primary):hover {
+            color: var(--primary-color);
+            text-decoration: underline; /* Specific for nav links */
+        }
+
+        .header .hamburger-menu {
+            display: none; /* Hidden by default on desktop */
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .header .hamburger-menu span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-neutral-color);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .mobile-nav-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .mobile-nav-overlay.open {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-overlay .close-btn {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            color: var(--hero-text-color);
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .mobile-nav-overlay a {
+            color: var(--hero-text-color);
+            font-size: 28px;
+            margin: 16px 0;
+            text-decoration: none;
+        }
+
+        .mobile-nav-overlay a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x1080?text=Stunning+Minecraft+World'); /* Placeholder URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--hero-text-color);
+            padding: 80px 24px; /* Ensure padding for smaller screens if min-height is not met */
+        }
+
+        .hero-section h1 {
+            font-size: 56px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 16px;
+            color: var(--hero-text-color);
+        }
+
+        .hero-section h3 {
+            font-size: 28px;
+            color: #F0F4F8; /* Slightly darker white */
+            margin-top: 16px;
+            margin-bottom: 0;
+        }
+
+        .hero-section .btn-primary {
+            margin-top: 32px;
+        }
+
+        .about-minecraft-section {
+            padding: 80px 0;
+        }
+
+        .about-minecraft-section h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .about-minecraft-section p {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+        }
+
+        .about-minecraft-section .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+            gap: 48px;
+            margin-top: 40px;
+        }
+
+        .about-minecraft-section .feature-item {
+            text-align: center;
+        }
+
+        .about-minecraft-section .feature-item .icon {
+            width: 48px; /* Larger icon size */
+            height: 48px;
+            background-color: var(--primary-color); /* Placeholder for icon */
+            margin: 0 auto 16px auto;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--hero-text-color); /* Icon color */
+            font-size: 24px; /* Larger font for icon text */
+            font-weight: bold;
+        }
+
+        .about-minecraft-section .feature-item h4 {
+            color: var(--text-neutral-color);
+            margin-bottom: 8px;
+        }
+
+        .gameplay-features-section {
+            padding: 64px 0;
+            background-color: var(--light-primary-color);
+        }
+
+        .gameplay-features-section h2 {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .gameplay-feature-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 64px;
+            padding: 64px 0;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .gameplay-feature-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .gameplay-feature-item .text-content,
+        .gameplay-feature-item .image-content {
+            flex: 1;
+            min-width: 300px; /* Ensure content doesn't get too small */
+            max-width: 50%;
+        }
+
+        .gameplay-feature-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .gameplay-feature-item h3 {
+            margin-bottom: 16px;
+        }
+
+        .gameplay-feature-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+        }
+
+        .platforms-section {
+            padding: 80px 0;
+            background-color: #FFFFFF;
+        }
+
+        .platforms-section h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .platforms-section p {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+        }
+
+        .platforms-section .platform-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 32px;
+            justify-items: center;
+            margin-top: 40px;
+        }
+
+        .platforms-section .platform-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .platforms-section .platform-icon img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
+
+        .platforms-section .platform-icon span {
+            font-size: 14px;
+            color: var(--text-neutral-color);
+            font-weight: 500;
+        }
+
+        .community-section {
+            padding: 80px 0;
+            background-color: var(--background-color);
+        }
+
+        .community-section h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .community-section p {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+        }
+
+        .community-section .community-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .community-section .community-feature-item h4 {
+            margin-bottom: 12px;
+        }
+
+        .community-section .cta-wrapper {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .final-cta-section {
+            padding: 80px 0;
+            background-color: var(--light-primary-color);
+        }
+
+        .final-cta-section h2 {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .final-cta-section .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 32px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .footer {
+            background-color: var(--text-neutral-color);
+            color: var(--sub-gray-color);
+            padding: 40px 0;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .footer .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer .footer-links a,
+        .footer .copyright {
+            color: var(--sub-gray-color);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer .footer-links a:hover {
+            color: var(--background-color);
+            text-decoration: underline; /* Specific for footer links */
+        }
+
+        .footer .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 0; /* Reset for desktop */
+        }
+
+        .footer .social-links img {
+            width: 24px;
+            height: 24px;
+            filter: grayscale(100%) brightness(1.5); /* Make icons match sub-gray */
+        }
+
+        .footer .social-links img:hover {
+            filter: grayscale(0%) brightness(1); /* Reset filter on hover, or use a specific color */
+        }
+
+        @media (max-width: 992px) {
+            h1 { font-size: 48px; }
+            h2 { font-size: 36px; }
+            h3 { font-size: 24px; }
+            h4 { font-size: 18px; }
+            p { font-size: 15px; }
+
+            .gameplay-feature-item {
+                flex-direction: column !important; /* Force column on smaller screens */
+                text-align: center;
+                gap: 32px; /* Reduce gap */
+                padding: 48px 0;
+            }
+
+            .gameplay-feature-item .text-content,
+            .gameplay-feature-item .image-content {
+                max-width: 100%;
+                min-width: unset;
+            }
+            .gameplay-features-section h2,
+            .about-minecraft-section h2,
+            .platforms-section h2,
+            .community-section h2,
+            .final-cta-section h2 {
+                margin-bottom: 32px;
+            }
+            .about-minecraft-section,
+            .platforms-section,
+            .community-section,
+            .final-cta-section {
+                padding: 64px 0;
+            }
+            .about-minecraft-section .features-grid,
+            .community-section .community-features-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .platforms-section .platform-icons {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header .nav-links {
+                display: none; /* Hide desktop nav links */
+            }
+
+            .header .hamburger-menu {
+                display: flex; /* Show hamburger menu */
+            }
+
+            .header .nav-links .btn-primary { /* Keep the CTA button if needed, or move to mobile overlay */
+                display: none;
+            }
+
+            .footer .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .footer .footer-links {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .footer .footer-links a {
+                margin-bottom: 8px; /* Add space between stacked links */
+            }
+
+            .footer .copyright {
+                margin-top: 16px;
+            }
+
+            .footer .social-links {
+                margin-top: 16px; /* Add space between social links and other content */
+            }
+
+            .hero-section h1 {
+                font-size: 40px;
+            }
+
+            .hero-section h3 {
+                font-size: 20px;
+            }
+
+            .final-cta-section .button-group {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center; /* Center buttons when stacked */
+            }
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px; /* Limit button width on small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 28px; }
+            h3 { font-size: 22px; }
+            h4 { font-size: 16px; }
+            p { font-size: 14px; }
+            .hero-section {
+                padding: 60px 16px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ================== Header ================== -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="https://via.placeholder.com/150x40?text=Minecraft+Logo" alt="Minecraft Logo">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Minecraft</a>
+                <a href="#gameplay">Gameplay</a>
+                <a href="#platforms">Platforms</a>
+                <a href="#community">Community</a>
+                <a href="#cta" class="btn-primary">[Play Now / Get the Game]</a>
+            </nav>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+        <span class="close-btn" id="close-mobile-nav">&times;</span>
+        <a href="#home">Home</a>
+        <a href="#about">About Minecraft</a>
+        <a href="#gameplay">Gameplay</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#community">Community</a>
+        <a href="#cta" class="btn-primary">[Play Now / Get the Game]</a>
+    </div>
+
+    <!-- ================== Hero Section ================== -->
+    <section id="home" class="hero-section" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x1080?text=Stunning+Minecraft+World');">
+        <div class="container">
+            <h1>[Unleash Your Imagination: Explore, Build, Conquer in Minecraft]</h1>
+            <h3>[The Ultimate Sandbox Experience Awaits You]</h3>
+            <a href="#cta" class="btn-primary">[Start Your Adventure]</a>
+        </div>
+    </section>
+
+    <!-- ================== About Minecraft Section ================== -->
+    <section id="about" class="about-minecraft-section">
+        <div class="container">
+            <h2>What is Minecraft?</h2>
+            <p>[Brief overview of Minecraft as a sandbox video game where players explore a blocky, procedurally generated 3D world, and can discover and extract raw materials, craft tools, build structures, or earthworks.]</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">∞</div> <!-- Placeholder for icon -->
+                    <h4>無限の探検</h4>
+                    <p>[Vast, procedurally generated worlds with diverse biomes]</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⛏️</div> <!-- Placeholder for icon -->
+                    <h4>自由な建築</h4>
+                    <p>[Build anything you can imagine with various block types]</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚔️</div> <!-- Placeholder for icon -->
+                    <h4>冒険とサバイバル</h4>
+                    <p>[Fight monsters, gather resources, survive the night]</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💡</div> <!-- Placeholder for icon -->
+                    <h4>クリエイティブな表現</h4>
+                    <p>[Express yourself through unique creations and Redstone contraptions]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== Gameplay Features Section ================== -->
+    <section id="gameplay" class="gameplay-features-section">
+        <div class="container">
+            <h2>Dive into the World of Blocks</h2>
+
+            <div class="gameplay-feature-item">
+                <div class="text-content">
+                    <h3>Build Your Dreams</h3>
+                    <h4>Build Your Dreams</h4>
+                    <p>[Describe the core building mechanics, different block types, and the creative potential, from simple shelters to elaborate castles.]</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://via.placeholder.com/600x400?text=Impressive+Player-Built+Structure" alt="Screenshot of an impressive player-built structure or city">
+                </div>
+            </div>
+
+            <div class="gameplay-feature-item">
+                <div class="text-content">
+                    <h3>Explore Vast Worlds</h3>
+                    <h4>Explore Vast Worlds</h4>
+                    <p>[Highlight exploration, diverse biomes (forests, deserts, mountains, oceans), hidden treasures, and ancient structures.]</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://via.placeholder.com/600x400?text=Diverse+Biome+or+Cave+Exploration" alt="Screenshot of a diverse biome or a player exploring a cave">
+                </div>
+            </div>
+
+            <div class="gameplay-feature-item">
+                <div class="text-content">
+                    <h3>Adventure & Survival</h3>
+                    <h4>Adventure & Survival</h4>
+                    <p>[Explain resource gathering, crafting essential tools and armor, fighting hostile mobs (Creepers, Zombies, Skeletons), and navigating dangers.]</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://via.placeholder.com/600x400?text=Player+Fighting+Mob+or+Mining" alt="Screenshot of a player fighting a mob, mining, or exploring a dungeon">
+                </div>
+            </div>
+
+            <div class="gameplay-feature-item">
+                <div class="text-content">
+                    <h3>Endless Possibilities</h3>
+                    <h4>Endless Possibilities</h4>
+                    <p>[Mention advanced mechanics like Redstone for complex contraptions, farming, enchanting, potion brewing, and venturing into other dimensions like the Nether and The End.]</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://via.placeholder.com/600x400?text=Complex+Redstone+or+Portal" alt="Screenshot of a complex Redstone device, an enchanting table, or a portal to another dimension">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== Play Across Platforms Section ================== -->
+    <section id="platforms" class="platforms-section">
+        <div class="container">
+            <h2>Available Everywhere You Play</h2>
+            <p>[Emphasize the cross-platform nature of Minecraft, allowing players to connect and play together regardless of their device.]</p>
+            <div class="platform-icons">
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/64x64?text=PC" alt="PC platform icon">
+                    <span>PC</span>
+                </div>
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/64x64?text=Mac" alt="Mac platform icon">
+                    <span>Mac</span>
+                </div>
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/64x64?text=PS" alt="PlayStation platform icon">
+                    <span>PlayStation</span>
+                </div>
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/64x64?text=XB" alt="Xbox platform icon">
+                    <span>Xbox</span>
+                </div>
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/64x64?text=NSW" alt="Nintendo Switch platform icon">
+                    <span>Switch</span>
+                </div>
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/64x64?text=iOS" alt="iOS platform icon">
+                    <span>iOS</span>
+                </div>
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/64x64?text=Android" alt="Android platform icon">
+                    <span>Android</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== Join the Global Community Section ================== -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <h2>Connect with Millions of Players</h2>
+            <p>[Highlight the vibrant global community, multiplayer aspects, and ways players can interact and extend their game.]</p>
+            <div class="community-features-grid">
+                <div class="card community-feature-item">
+                    <h4>マルチプレイヤーモード</h4>
+                    <p>[Play with friends on private servers or public realms]</p>
+                </div>
+                <div class="card community-feature-item">
+                    <h4>巨大なコミュニティ</h4>
+                    <p>[Share creations, tips, and experiences with a global community through forums and social media]</p>
+                </div>
+                <div class="card community-feature-item">
+                    <h4>MODとカスタマイズ</h4>
+                    <p>[Enhance your game with user-created mods, texture packs, and custom maps]</p>
+                </div>
+            </div>
+            <div class="cta-wrapper">
+                <a href="#" class="btn-secondary">[Join the Official Minecraft Forums / Discord]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== CTA Section ================== -->
+    <section id="cta" class="final-cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Minecraft Journey?</h2>
+            <div class="button-group">
+                <a href="#" class="btn-primary">[Buy Minecraft Now]</a>
+                <a href="#" class="btn-secondary">[Learn More About Minecraft]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== Footer ================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Support</a>
+            </div>
+            <div class="social-links">
+                <a href="[Minecraft Official Twitter URL]" target="_blank" aria-label="Minecraft Official Twitter">
+                    <img src="https://via.placeholder.com/24x24?text=Tw" alt="Twitter icon">
+                </a>
+                <a href="[Minecraft Official Facebook URL]" target="_blank" aria-label="Minecraft Official Facebook">
+                    <img src="https://via.placeholder.com/24x24?text=Fb" alt="Facebook icon">
+                </a>
+                <a href="[Minecraft Official YouTube URL]" target="_blank" aria-label="Minecraft Official YouTube">
+                    <img src="https://via.placeholder.com/24x24?text=Yt" alt="YouTube icon">
+                </a>
+            </div>
+            <div class="copyright">
+                <small>Copyright © 2023 Mojang Studios. Minecraft is a trademark of Mojang Synergies AB.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+            const closeMobileNav = document.getElementById('close-mobile-nav');
+            const mobileNavLinks = mobileNavOverlay.querySelectorAll('a');
+
+            hamburgerMenu.addEventListener('click', function() {
+                mobileNavOverlay.classList.add('open');
+            });
+
+            closeMobileNav.addEventListener('click', function() {
+                mobileNavOverlay.classList.remove('open');
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileNavOverlay.classList.remove('open');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    // Handle case where href is just '#' (e.g., in footer or buttons without specific targets)
+                    if (targetId === '#') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                        return;
+                    }
+
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const headerOffset = document.querySelector('.header').offsetHeight || 0;
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

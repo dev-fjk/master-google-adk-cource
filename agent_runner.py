@@ -9,7 +9,7 @@ from google.genai.types import Content, Part
 from rich import print as rprint
 from rich.syntax import Syntax
 
-from agents.website_builder.agent import root_agent
+from agents.root_website_builder.agent import root_agent
 
 load_dotenv()
 
