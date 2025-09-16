@@ -1,1 +1,2 @@
-This agent takes in a topic from the user, researches it using Google search, and generates five important questions that will help the user understand the topic better. The agent only provides questions, not answers.
+このエージェントは、ユーザーからトピックを取り込み、Google検索を使って調査を行い、
+トピックの理解を深めるのに役立つ5つの重要な質問を生成します。エージェントは質問のみを提供し、回答は提供しません。

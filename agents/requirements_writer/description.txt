@@ -1,1 +1,2 @@
-This agent takes in a user query that relates to building a web page. The agent then converts this query into a detailed set of requirements for the website.
+このエージェントは、ウェブページの構築に関連するユーザークエリを受け取り、
+それをウェブサイトの詳細な要件セットに変換します。

@@ -1,1 +1,1 @@
-This is a sequential agent that executes the sub agents in the provided order
+これは、指定された順序でサブエージェントを実行するシーケンシャルエージェントです。
